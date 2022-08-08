@@ -1,0 +1,161 @@
+
+@import "./styles/fonts";
+@import "./styles/util";
+
+:root{
+    --color0:#A0522D;
+    --color1:#6082B6;
+}
+
+
+@mixin button{
+    padding:20px;
+    font-size:2em;
+}
+
+.a_p_p_{    
+    &Nav{
+        &View{
+            @include view
+        }
+        &Main{
+            &Pod{
+                z-index:5;
+                position:relative;
+            }
+        }
+        &Pod{
+            &0{
+                display:flex;
+                background: var(--radial-bg-yellow);
+                font-size:16px;
+                padding:20px;
+                justify-content: center;
+
+                &Title{
+                    &0{
+                        font-family: alba;
+                        font-size: 2em;
+                        color:var(--color0);
+                        margin:0 30px 0 0;
+                    }
+                    &1{
+                        font-family: alba;
+                        font-size: 1.5em;
+                        color:var(--color1);
+                        background: url(./);
+                    }                    
+                }
+
+                &Link {
+                    &0{
+                        margin:0 20px 0 0;
+                        padding:20px;
+                        border:2px solid black;
+                        min-width:120px;
+                        @include tac;
+                    }
+
+                    @for $i from 1 through 3 {
+                        &#{$i}{
+                            background-image: url('assets/media/nav_#{$i - 1}.png');
+                            height:50px;
+                            width: 50px;     
+                            border-radius:100%;
+                            border:2px solid black;
+                            background-repeat: no-repeat;
+                            background-size: contain;  
+                            margin:0 20px 0 0;                    
+                        }
+                    }
+                }
+
+                &Item{
+                    &0{
+                        max-width: 1200px;
+                        flex: 0 0 80%;
+                        display:flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+
+                    &1{
+                        display:flex;
+                    }
+
+
+                    &2{
+                        display:flex;
+                        justify-self: flex-end;
+                    }                    
+                }
+            }
+        }
+    }
+    &Shop{
+        &View{
+            @include view;
+            min-height:1500px;
+            @include outline;
+            background-color:var(--color1);
+            font-size:16px;
+        }
+        &Main{
+            &Pod{
+                margin:200px;
+                width:80%;
+            }
+        }
+        &Pod{
+            &0{
+                display:flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &CtrlButton{
+                    &0{
+                        background:var(--radial-bg-skyblue);
+                        @include button;
+
+                    }
+
+                    &1{
+                        background:var(--radial-bg-orange);
+                        @include button;                      
+                    }
+                }
+            }
+
+            &1{
+                display:flex;
+                margin:20px 0 0 0;
+                padding:20px;
+                max-height:500px;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                &Card{
+                    &0{
+
+                    }
+                }
+
+                &Img{
+                    &0{
+                        height:200px;
+                        width:200px;
+                        background-color:white
+                    }
+                }   
+                
+                &Button{
+                    &0{
+                        background:var(--radial-bg-viogreen);
+                        @include button;
+                    }
+                }
+            }
+        }
+    }
+
+}   
